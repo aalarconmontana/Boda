@@ -1,52 +1,94 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>¡Nuestra Boda!</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Invitación de Boda</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet" />
 </head>
 <body>
 
-  <!-- 🎶 Música de fondo -->
-  <audio id="musica" autoplay loop>
-    <source src="love-story-156946.mp3" type="audio/mpeg">
-    Tu navegador no soporta audio HTML5.
+  <!-- 💌 Carta animada -->
+  <div id="sobre">
+    <div class="mensaje">
+      <p class="mensaje-romantico">Estás cordialmente invitado a nuestra historia de amor…</p>
+      <button id="abrirCarta">Abrir Carta</button>
+    </div>
+  </div>
+
+  <!-- 🎶 Música -->
+  <audio id="musica" loop>
+    <source src="love-story-156946.mp3" type="audio/mpeg" />
   </audio>
 
-  <!-- 💍 Encabezado -->
-  <header>
-    <h1>¡Nos Casamos!</h1>
-    <h2>23 de noviembre de 2025</h2>
-    <div id="countdown"></div>
-  </header>
+  <!-- 💍 Contenido principal -->
+  <div id="contenido" style="display: none;">
+    <header>
+      <h1>¡Nos Casamos!</h1>
+      <h2>23 de noviembre de 2025</h2>
+      <div id="countdown"></div>
+    </header>
 
-  <!-- 👫 Sección de bienvenida -->
-  <section>
-    <h2>Bienvenidos</h2>
-    <p>Estamos muy emocionados de compartir este día tan especial contigo.</p>
-    <img src="img/pareja.jpg" alt="Foto de la pareja">
-  </section>
+    <section class="seccion animada">
+      <h3>Bienvenidos</h3>
+      <p>Estamos muy emocionados de compartir este día tan especial contigo.</p>
+    </section>
 
-  <!-- 📍 Detalles del evento -->
-  <section>
-    <h2>Detalles del Evento</h2>
-    <p>La ceremonia será a las 6:00 PM en el Jardín de los Sueños, Bogotá.</p>
-    <img src="img/lugar.jpg" alt="Lugar del evento">
-  </section>
+    <!-- 📸 Carrusel de fotos -->
+    <section id="carrusel" class="seccion animada">
+      <div class="slider">
+        <img src="img/foto1.jpg" alt="Foto 1" />
+        <img src="img/foto2.jpg" alt="Foto 2" />
+        <img src="img/foto3.jpg" alt="Foto 3" />
+      </div>
+    </section>
 
-  <!-- 📬 Confirmación de asistencia -->
-  <section>
-    <h2>Confirma tu Asistencia</h2>
-    <form id="form-rsvp">
-      <input type="text" id="nombre" name="nombre" placeholder="Tu nombre">
-      <input type="email" id="email" name="email" placeholder="Tu correo electrónico">
-      <button type="submit">Confirmar</button>
-    </form>
-    <div id="mensaje-confirmacion">¡Gracias por confirmar tu asistencia! 💌</div>
-  </section>
+    <!-- 📍 Lugar de la boda -->
+    <section class="seccion animada">
+      <h3>Lugar de la Boda</h3>
+      <p>La ceremonia se celebrará en el Jardín de los Sueños, un espacio mágico rodeado de naturaleza.</p>
+      <img src="img/lugar.jpg" alt="Lugar de la boda" />
+    </section>
 
-  <!-- 📜 Script -->
+    <!-- 🗺️ Ubicación -->
+    <section class="seccion animada">
+      <h3>Ubicación</h3>
+      <p>Dirección: Calle 123 #45-67, Bogotá, Colombia</p>
+      <div class="mapa-container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!4v1691091234567!6m8!1m7!1selONnBvpE976xdKrg_VL5Q!2m2!1d4.7939188!2d-74.2201403!3f139.47!4f92.46!5f0.7820865974627469"
+          width="100%"
+          height="300"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+      <a href="https://www.google.com/maps/@4.7939188,-74.2201403,3a,75y,139.47h,92.46t/data=!3m7!1e1!3m5!1selONnBvpE976xdKrg_VL5Q!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2.4582777357429677%26panoid%3DelONnBvpE976xdKrg_VL5Q%26yaw%3D139.46731950696528!7i16384!8i8192?entry=ttu"
+         target="_blank" class="mapa-boton">Ver en Google Maps</a>
+    </section>
+
+    <!-- 👗 Código de vestimenta -->
+    <section class="seccion animada">
+      <h3>Código de Vestimenta</h3>
+      <p>Vestimenta formal. Colores sugeridos: azul, blanco, dorado.</p>
+      <img src="img/vestimenta.jpg" alt="Código de vestimenta" />
+    </section>
+
+    <!-- 📬 Confirmación -->
+    <section class="seccion animada">
+      <h3>Confirma tu asistencia</h3>
+      <form id="form-rsvp">
+        <input type="text" id="nombre" placeholder="Tu nombre" required />
+        <input type="email" id="email" placeholder="Tu correo" required />
+        <button type="submit">Confirmar</button>
+      </form>
+      <p id="mensaje-confirmacion" style="display:none;">¡Gracias por confirmar tu asistencia!</p>
+    </section>
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>

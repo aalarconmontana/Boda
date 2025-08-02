@@ -1,10 +1,35 @@
-// 🎉 Contador regresivo
+// 💌 Mostrar contenido y reproducir música con animación suave
+document.getElementById("abrirCarta").addEventListener("click", () => {
+  const sobre = document.getElementById("sobre");
+  const contenido = document.getElementById("contenido");
+  const musica = document.getElementById("musica");
+
+  // Aplicar transición de salida al sobre
+  sobre.style.transition = "opacity 0.5s ease";
+  sobre.style.opacity = "0";
+
+  // Mostrar contenido con animación y reproducir música
+  setTimeout(() => {
+    sobre.style.display = "none";
+    contenido.style.display = "block";
+    contenido.classList.add("fade-in");
+    musica.volume = 0.3; // Volumen inicial suave
+    musica.play();
+  }, 500);
+});
+
+// ⏳ Contador regresivo hasta el día de la boda
 const countdown = document.getElementById("countdown");
-const weddingDate = new Date("2025-11-23T18:00:00").getTime(); // ← FECHA CORREGIDA
+const weddingDate = new Date("2025-11-23T18:00:00").getTime();
 
 setInterval(() => {
   const now = new Date().getTime();
   const distance = weddingDate - now;
+
+  if (distance < 0) {
+    countdown.innerHTML = "¡Ya es el gran día!";
+    return;
+  }
 
   const days = Math.floor(distance / (1000 * 60 * 60 * 24));
   const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
@@ -14,48 +39,11 @@ setInterval(() => {
   countdown.innerHTML = `${days} días ${hours}h ${minutes}m ${seconds}s`;
 }, 1000);
 
-// ✨ Animaciones al hacer scroll
-document.addEventListener("DOMContentLoaded", () => {
-  const sections = document.querySelectorAll("section");
-
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-      }
-    });
-  });
-
-  sections.forEach(section => observer.observe(section));
-});
-
-// ✅ Envío del formulario RSVP con validación y confirmación
+// 📬 Confirmación de asistencia con animación de aparición
 document.getElementById("form-rsvp").addEventListener("submit", function(e) {
   e.preventDefault();
-
-  const nombre = document.getElementById("nombre").value.trim();
-  const email = document.getElementById("email").value.trim();
-
-  if (nombre === "" || email === "") {
-    alert("Por favor completa todos los campos.");
-    return;
-  }
-
-  // Enviar datos a SheetDB
-  fetch("https://sheetdb.io/api/v1/hbk277d5zp9v6", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ data: { nombre, email } })
-  })
-  .then(response => {
-    if (response.ok) {
-      document.getElementById("form-rsvp").reset();
-      document.getElementById("mensaje-confirmacion").style.display = "block";
-    } else {
-      alert("Hubo un error al enviar tu confirmación. Intenta nuevamente.");
-    }
-  })
-  .catch(() => {
-    alert("No se pudo conectar con el servidor. Verifica tu conexión.");
-  });
+  const mensaje = document.getElementById("mensaje-confirmacion");
+  mensaje.style.display = "block";
+  mensaje.classList.add("fade-in");
+  this.reset();
 });
