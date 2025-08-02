@@ -1,22 +1,46 @@
 body {
-  font-family: sans-serif;
-  background-color: #fff0f5;
-  text-align: center;
+  font-family: 'Georgia', serif;
+  background: url('img/fondo.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #2c3e50;
   margin: 0;
   padding: 0;
+  text-align: center;
 }
 header {
-  background-color: #ffb6c1;
+  background-color: rgba(255, 255, 255, 0.8);
   padding: 2rem;
 }
 h1 {
   font-size: 3rem;
-  margin: 0;
+  color: #2980b9;
 }
 section {
+  background-color: rgba(255, 255, 255, 0.85);
+  margin: 2rem;
   padding: 2rem;
+  border-radius: 10px;
+}
+img {
+  max-width: 90%;
+  border-radius: 10px;
 }
 form input, form button {
   padding: 0.5rem;
   margin: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/* Animación para secciones */
+section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 1s ease;
+}
+
+/* Clase que se activa cuando la sección entra en pantalla */
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
 }

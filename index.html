@@ -2,33 +2,53 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>¡Nos Casamos! 💍</title>
+  <title>María & Juan - Nuestra Boda</title>
   <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
+  <audio autoplay loop>
+    <source src="musica.mp3" type="audio/mpeg">
+  </audio>
+
   <header>
-    <h1>Angie y Camilo</h1>
-    <p>15 de diciembre de 2025</p>
+    <h1>María & Juan</h1>
+    <p>¡Nos casamos el 15 de diciembre de 2025!</p>
   </header>
+
+  <section id="contador">
+    <h2>Faltan...</h2>
+    <div id="countdown"></div>
+  </section>
 
   <section id="galeria">
     <h2>Nuestra Historia</h2>
-    <img src="img/foto1.jpg" alt="Foto 1" width="300">
-    <img src="img/foto2.jpg" alt="Foto 2" width="300">
+    <img src="img/novios.jpg" alt="Foto de los novios">
   </section>
 
-  <section id="rsvp">
-    <h2>Confirma tu asistencia</h2>
-    <form action="https://formspree.io/f/tu_codigo" method="POST">
-      <input type="text" name="nombre" placeholder="Tu nombre" required>
-      <input type="email" name="email" placeholder="Tu correo" required>
-      <button type="submit">Confirmar</button>
-    </form>
+  <section id="evento">
+    <h2>Detalles del Evento</h2>
+    <p>Ceremonia: 18:00 - Iglesia Parroquial</p>
+    <p>Recepción: 19:30 - Finca Loma de Doña Valle</p>
+    <a href="https://maps.google.com" target="_blank">Ver mapa</a>
   </section>
+
+ <section id="rsvp">
+  <h2>Confirma tu asistencia</h2>
+  <form action="https://sheetdb.io/api/v1/hbk277d5zp9v6" method="POST">
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="data[nombre]" required>
+
+    <label for="email">Correo:</label>
+    <input type="email" id="email" name="data[email]" required>
+
+    <button type="submit">Confirmar</button>
+  </form>
+</section>
 
   <section id="whatsapp">
     <h2>Comparte la invitación</h2>
-    <a href="https://wa.me/?text=¡Estás invitado a nuestra boda! Mira todos los detalles aquí: https://tuusuario.github.io/boda" target="_blank">
+    <a href="https://wa.me/?text=¡Estás invitado a nuestra boda! 💍 Mira todos los detalles aquí: https://aalarconmontana.github.io/boda" target="_blank">
       Enviar por WhatsApp
     </a>
   </section>
