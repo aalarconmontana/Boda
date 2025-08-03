@@ -59,75 +59,44 @@ document.getElementById("form-rsvp").addEventListener("submit", function(e) {
     return;
   }
 
-  // Obtener fecha y hora actual
+  // Obtener fecha y hora actual en formato texto
   const ahora = new Date();
   const dia = String(ahora.getDate()).padStart(2, '0');
-  const mes = String(ahora.getMonth() + 1).padStart(2, '0'); // Meses van de 0 a 11
+  const mes = String(ahora.getMonth() + 1).padStart(2, '0');
   const año = ahora.getFullYear();
   const hora = String(ahora.getHours()).padStart(2, '0');
   const minutos = String(ahora.getMinutes()).padStart(2, '0');
 
-  const fechaDDMMAAAA = `${dia}${mes}${año}`;
-  const horaConfirmacion = `${hora}:${minutos}`;
+  const fechaTexto = `${dia}/${mes}/${año}`;     // Ejemplo: "03/08/2025"
+  const horaTexto = `${hora}:${minutos}`;        // Ejemplo: "17:45"
 
   // Enviar datos a SheetDB
-  fetch("https://sheetdb.io/api/v1/hbk277d5zp9v6", {
+  fetch("https://sheetdb.io/api/v1/iuqjjqn361m1i", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
     },
     body: JSON.stringify({
-      data: [
-        {
-          nombre: nombre,
-          email: email,
-          fecha: fechaDDMMAAAA,
-          hora: horaConfirmacion
-        }
-      ]
+      data: [{
+        nombre: nombre,
+        email: email,
+        fecha: fechaTexto,
+        hora: horaTexto
+      }]
     })
   })
   .then(response => {
     if (response.ok) {
       mensaje.style.display = "block";
       mensaje.classList.add("fade-in");
-      this.reset();
+      document.getElementById("form-rsvp").reset();
     } else {
-      alert("Hubo un error al enviar tu confirmación. Intenta nuevamente.");
-    }
-  })
-  
-
-  // Enviar datos a SheetDB
-  const fechaConfirmacion = new Date().toISOString();
-  
-  fetch("https://sheetdb.io/api/v1/hbk277d5zp9v6", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-      data: [
-        {
-          nombre: nombre,
-          email: email,
-          fecha: fechaConfirmacion
-        }
-      ]
-    })
-  })
-  .then(response => {
-    if (response.ok) {
-      mensaje.style.display = "block";
-      mensaje.classList.add("fade-in");
-      this.reset();
-    } else {
-      alert("Hubo un error al enviar tu confirmación. Intenta nuevamente.");
+      throw new Error("Respuesta no OK");
     }
   })
   .catch(error => {
     console.error("Error:", error);
-    alert("No se pudo conectar con el servidor.");
+    alert("Hubo un error al enviar tu confirmación. Intenta nuevamente.");
   });
 });
 

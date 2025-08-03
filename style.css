@@ -1,6 +1,6 @@
 /* 🎨 Estilo general */
 body {
-  font-family: 'Georgia', serif;
+  font-family: 'Lora', serif;
   background: linear-gradient(to bottom, #e6f0ff, #d0e6f7);
   margin: 0;
   padding: 0;
@@ -57,11 +57,22 @@ body {
 }
 
 header h1 {
-  font-size: 3rem;
-  color: #2980b9;
+  font-family: "Fleur De Leah", cursive;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 5rem; /* Tamaño para pantallas grandes */
+  color: #000000;
+}
+
+/* Tamaño responsivo para móviles */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 3rem; /* Se adapta mejor a celular o tablet */
+  }
 }
 
 header h2 {
+  font-family: 'Great Vibes', cursive;
   font-size: 2rem;
   color: #7f8c8d;
 }
