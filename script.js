@@ -15,6 +15,10 @@ document.getElementById("abrirCarta").addEventListener("click", () => {
     contenido.classList.add("fade-in");
     musica.volume = 0.3; // Volumen inicial suave
     musica.play();
+
+    // Mostrar los laterales florales
+    document.querySelector(".decoracion-izquierda").classList.add("mostrar");
+    document.querySelector(".decoracion-derecha").classList.add("mostrar");
   }, 500);
 });
 
@@ -39,27 +43,33 @@ setInterval(() => {
   countdown.innerHTML = `${days} días ${hours}h ${minutes}m ${seconds}s`;
 }, 1000);
 
-// 📬 Confirmación de asistencia con envío a SheetDB
+// 📬 Confirmación de asistencia con validación de duplicado y formato
 document.getElementById("form-rsvp").addEventListener("submit", function(e) {
   e.preventDefault();
 
-  const nombre = document.getElementById("nombre").value.trim();
-  const email = document.getElementById("email").value.trim();
+  let nombre = document.getElementById("nombre").value.trim();
+  let email = document.getElementById("email").value.trim();
   const mensaje = document.getElementById("mensaje-confirmacion");
+
+  // 🔠 Formatear nombre (cada palabra con mayúscula) y correo (todo en minúsculas)
+  nombre = nombre
+    .toLowerCase()
+    .split(" ")
+    .map(palabra => palabra.charAt(0).toUpperCase() + palabra.slice(1))
+    .join(" ");
+  email = email.toLowerCase();
 
   if (nombre === "" || email === "") {
     alert("Por favor completa todos los campos.");
     return;
   }
 
-  // Validación de correo electrónico
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailRegex.test(email)) {
     alert("Por favor ingresa un correo válido.");
     return;
   }
 
-  // Obtener fecha y hora actual en formato texto
   const ahora = new Date();
   const dia = String(ahora.getDate()).padStart(2, '0');
   const mes = String(ahora.getMonth() + 1).padStart(2, '0');
@@ -67,10 +77,29 @@ document.getElementById("form-rsvp").addEventListener("submit", function(e) {
   const hora = String(ahora.getHours()).padStart(2, '0');
   const minutos = String(ahora.getMinutes()).padStart(2, '0');
 
-  const fechaTexto = `${dia}/${mes}/${año}`;     // Ejemplo: "03/08/2025"
-  const horaTexto = `${hora}:${minutos}`;        // Ejemplo: "17:45"
+  const fechaTexto = `${dia}/${mes}/${año}`;
+  const horaTexto = `${hora}:${minutos}`;
 
-  // Enviar datos a SheetDB
+  // 🔍 Verificar si el correo ya existe en SheetDB
+  fetch(`https://sheetdb.io/api/v1/iuqjjqn361m1i/search?email=${email}`)
+    .then(res => res.json())
+    .then(data => {
+      if (data.length > 0) {
+        alert("Este correo ya ha confirmado asistencia.");
+        return;
+      }
+
+      // ✅ Enviar si no está duplicado
+      enviarFormulario(nombre, email, fechaTexto, horaTexto);
+    })
+    .catch(error => {
+      console.error("Error al verificar duplicado:", error);
+      alert("No se pudo verificar el correo. Intenta más tarde.");
+    });
+});
+
+// 🚀 Función para enviar datos a SheetDB
+function enviarFormulario(nombre, email, fechaTexto, horaTexto) {
   fetch("https://sheetdb.io/api/v1/iuqjjqn361m1i", {
     method: "POST",
     headers: {
@@ -87,9 +116,19 @@ document.getElementById("form-rsvp").addEventListener("submit", function(e) {
   })
   .then(response => {
     if (response.ok) {
+      const mensaje = document.getElementById("mensaje-confirmacion");
       mensaje.style.display = "block";
       mensaje.classList.add("fade-in");
       document.getElementById("form-rsvp").reset();
+
+      // 🎉 Retroalimentación visual del botón
+      const boton = document.querySelector("#form-rsvp button");
+      boton.disabled = true;
+      boton.textContent = "Enviado ✅";
+      setTimeout(() => {
+        boton.disabled = false;
+        boton.textContent = "Confirmar";
+      }, 3000);
     } else {
       throw new Error("Respuesta no OK");
     }
@@ -98,5 +137,4 @@ document.getElementById("form-rsvp").addEventListener("submit", function(e) {
     console.error("Error:", error);
     alert("Hubo un error al enviar tu confirmación. Intenta nuevamente.");
   });
-});
-
+}

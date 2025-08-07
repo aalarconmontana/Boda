@@ -77,6 +77,49 @@ header h2 {
   color: #7f8c8d;
 }
 
+/* Laterales florales */
+.decoracion-izquierda,
+.decoracion-derecha {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 150px;
+  background-repeat: repeat-y;
+  background-size: 100% auto;
+  background-position: center;
+  display: none;
+  opacity: 0;
+  transition: opacity 1s ease;
+  z-index: 0;
+}
+
+.decoracion-izquierda {
+  left: 0;
+  background-image: url('img/flores-lateral.png');
+}
+
+.decoracion-derecha {
+  right: 0;
+  background-image: url('img/flores-lateral.png');
+  transform: scaleX(-1);
+}
+
+/* Mostrar con animación */
+.decoracion-izquierda.mostrar,
+.decoracion-derecha.mostrar {
+  display: block;
+  opacity: 1;
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+  .decoracion-izquierda,
+  .decoracion-derecha {
+    width: 80px;
+  }
+}
+
+
 .imagen-pequena {
   width: 100%;
   max-width: 250px; /* Tamaño máximo en pantallas grandes */
