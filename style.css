@@ -77,6 +77,31 @@ header h2 {
   color: #7f8c8d;
 }
 
+.imagen-pequena {
+  width: 100%;
+  max-width: 250px; /* Tamaño máximo en pantallas grandes */
+  border: 3px solid #7cb1d4;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  display: block;
+  margin: 2rem auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.imagen-pequena:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* 📱 Estilo especial para móviles */
+@media (max-width: 768px) {
+  .imagen-pequena {
+    max-width: 80%; /* Más ancho en pantallas pequeñas */
+    border-radius: 10px; /* Bordes más suaves */
+    margin: 1.5rem auto;
+  }
+}
+
 #countdown {
   font-size: 1.5rem;
   margin-top: 1rem;
