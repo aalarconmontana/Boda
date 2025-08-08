@@ -24,7 +24,7 @@ document.getElementById("abrirCarta").addEventListener("click", () => {
 
 // ⏳ Contador regresivo hasta el día de la boda
 const countdown = document.getElementById("countdown");
-const weddingDate = new Date("2025-11-22T17:00:00").getTime();
+const weddingDate = new Date("2025-11-22T16:00:00").getTime();
 
 setInterval(() => {
   const now = new Date().getTime();

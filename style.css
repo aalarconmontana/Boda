@@ -6,6 +6,7 @@ body {
   padding: 0;
   text-align: center;
   color: #ffffff;
+  font-size: 1.4em;
 }
 
 /* 💌 Carta animada */
@@ -80,6 +81,7 @@ header h2 {
 .seccion h3 {
   font-family: 'Parisienne', cursive;
   font-size: 42px;
+  white-space: nowrap;
   color: #ffffff;
   margin-bottom: 20px;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
@@ -161,7 +163,7 @@ header h2 {
 .imagen-pequena {
   width: 100%;
   max-width: 250px; /* Tamaño máximo en pantallas grandes */
-  border: 3px solid #85a9f8;
+  border: 3px solid #a2b2d4;
   border-radius: 15px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   display: block;
@@ -282,7 +284,7 @@ form button:hover {
 
 #mensaje-confirmacion {
   margin-top: 1rem;
-  color: #27ae60;
+  color: #ffffff;
   font-weight: bold;
   display: none;
 }
@@ -292,7 +294,7 @@ form button:hover {
   margin: 2rem auto;
   max-width: 700px;
   padding: 1rem;
-  background: #85a9f8;
+  background: #a2b2d4;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
@@ -318,6 +320,146 @@ form button:hover {
 .mapa-boton:hover {
   background-color: #2980b9;
 }
+
+/*iconos*/
+
+.calendario-icono-con-icono {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; /* separación más sutil entre hora e ícono */
+}
+
+.calendario-icono {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.icono-calendario-icono {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  vertical-align: middle;
+}
+
+.hora-con-icono {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; /* separación más sutil entre hora e ícono */
+}
+
+.hora {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.icono-hora {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  vertical-align: middle;
+}
+
+.hora-con-icono {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; /* separación más sutil entre hora e ícono */
+}
+
+.sobre {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.icono-sobre {
+  width: 128px;
+  height: 128px;
+  object-fit: contain;
+  vertical-align: middle;
+}
+
+.sobre-con-icono {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; /* separación más sutil entre hora e ícono */
+}
+
+.ubicacion {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.icono-ubicacion {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  vertical-align: middle;
+}
+
+
+.vestidos-con-icono {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; /* separación más sutil entre hora e ícono */
+}
+
+.vestidos {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.icono-vestidos {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  vertical-align: middle;
+}
+
+.confirmar-asistencia-con-icono {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; /* separación más sutil entre hora e ícono */
+}
+
+.confirmar-asistencia {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.icono-confirmar-asistencia {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  vertical-align: middle;
+}
+
+.mensaje-biblico {
+  color: #000000;
+  position: relative;
+  padding: 1rem 0;
+}
+
+.mensaje-biblico::before,
+.mensaje-biblico::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 1px;
+  background: #000;
+  margin: 0.5rem auto;
+}
+
 
 /* ✨ Animaciones */
 .fade-in {

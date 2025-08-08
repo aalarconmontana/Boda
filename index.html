@@ -43,15 +43,9 @@
 
       <div class="mensaje-destacado">
         <p>
-          Nos elegimos en amor, y Dios nos bendice en unidad.<br>
-          “Y sobre todas estas cosas, vestíos de amor, que es el vínculo perfecto.”<br>
-          — Colosenses 3:14
-        </p>
-
-        <p>
           Dios, en su infinita bondad, nos cruzó en el camino<br>
           y hoy, con profunda alegría, queremos compartir contigo<br>
-          el inicio de esta nueva etapa.<br><br>
+          el inicio de esta nueva etapa.<br>
           Te invitamos a ser parte de este momento único,<br>
           donde nuestras vidas se convertirán en una sola.
         </p>
@@ -64,7 +58,10 @@
     </section>
 
     <section class="seccion animada">
-      <h3>El gran día</h3>
+      <div class="calendario-icono-con-icono">
+        <span class="calendario-icono"><h3>El gran día</h3></span>
+        <img src="img/calendario-icono.png" alt="Icono" class="icono-calendario-icono">
+      </div>
       <img src="img/Calendario2.png" alt="Calendario de noviembre" class="imagen-calendario" />
     </section>
 
@@ -76,18 +73,23 @@
         <img src="img/foto3.jpg" alt="Foto 3" />
       </div>
     </section>
-
-    <!-- 📍 Lugar de la boda -->
-    <section class="seccion animada">
-      <h3>Lugar de la Boda</h3>
-      <p>La ceremonia se celebrará en el Jardín de los Sueños, un espacio mágico rodeado de naturaleza.</p>
-      <img src="img/lugar.jpg" alt="Lugar de la boda" />
-    </section>
-
+    <div class="mensaje-biblico">
+        Nos elegimos en amor, y Dios nos bendice en unidad.<br>
+        “Y sobre todas estas cosas, vestíos de amor, que es el vínculo perfecto.”<br>
+        — Colosenses 3:14
+    </div>
     <!-- 🗺️ Ubicación -->
     <section class="seccion animada">
-      <h3>Ubicación</h3>
-      <p>Dirección: Hacienda versalles, Funza-La Punta, Cundinamarca</p>
+      <div class="hora-con-icono">
+        <span class="hora"><h3>Hora</h3></span>
+        <img src="img/reloj.png" alt="Icono" class="icono-hora">
+      </div>
+      <p>3:00 PM</p>
+      <div class="ubicacion-con-icono">
+        <span class="ubicacion"><h3>Ubicación</h3></span>
+        <img src="img/marcador.png" alt="Icono" class="icono-ubicacion">
+      </div>
+      <p>Hacienda versalles, Funza-La Punta, Cundinamarca</p>
       <div class="mapa-container">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3975.8611295196383!2d-74.2226603259627!3d4.79387564084473!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f7f8a904351d3%3A0xfd843578865aeead!2sHacienda%20Versalles%20by%20Carlos%20y%20Paola!5e0!3m2!1ses-419!2sco!4v1754622477200!5m2!1ses-419!2sco" width="400" height="300" style="border:0;" 
@@ -108,19 +110,37 @@
 
     <!-- 👗 Código de vestimenta -->
     <section class="seccion animada">
-      <h3>Código de Vestimenta</h3>
-      <p>Vestimenta formal. Colores sugeridos: azul, blanco, dorado.</p>
-      <img src="img/vestimenta.jpg" alt="Código de vestimenta" />
-    </section>
+      <div class="vestidos-con-icono">
+        <span class="vestidos"><h3>Código de Vestimenta</h3></span>
+        <img src="img/vestidos.png" alt="Icono" class="icono-vestidos">
+      </div>
+      <p><strong>Mujeres: </strong>Vestido Formal (Largo)</p>
+      <p><strong>Hombres: </strong>Traje Formal</p>
+      <p><strong>Reservamos los colores blanco y gama de azul claro.<br> 
+      Reservamos el color azul noche para el novio.</strong>Traje Formal</p>
+    </section>  
+
+    <!-- Lluvia de Sobres -->
+    <section class="seccion animada">
+      <span class="sobre"><h3>Lluvia de Sobres</h3></span>
+      <img src="img/sobre.png" alt="Icono" class="icono-sobre">
+    </section> 
 
     <!-- 📬 Confirmación -->
     <section class="seccion animada">
-      <h3>Confirma tu asistencia</h3>
+      <div class="confirmar-asistencia-con-icono">
+        <span class="confirmar-asistencia"><h3>Confirma tu asistencia</h3></span>
+        <img src="img/confirmar-asistencia.png" alt="Icono" class="icono-confirmar-asistencia">
+      </div>
+      <p>Por favor, confirma tu asistencia<br>
+      antes del 28 de septiembre de 2025</p><br>
       <form id="form-rsvp">
         <input type="text" id="nombre" placeholder="Tu nombre" required />
         <input type="email" id="email" placeholder="Tu correo" required />
         <button type="submit">Confirmar</button>
-      </form>
+      </form><br>
+      <p>¡Esperamos verlos y <br>
+        celebrar juntos!</p>
       <p id="mensaje-confirmacion" style="display:none;">¡Gracias por confirmar tu asistencia!</p>
     </section>
   </div>
