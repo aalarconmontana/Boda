@@ -40,7 +40,12 @@ setInterval(() => {
   const minutes = Math.floor((distance / (1000 * 60)) % 60);
   const seconds = Math.floor((distance / 1000) % 60);
 
-  countdown.innerHTML = `${days} días ${hours}h ${minutes}m ${seconds}s`;
+  countdown.innerHTML = `
+  <div class="bloque"><span class="num">${days}</span><span class="label">Días</span></div>
+  <div class="bloque"><span class="num">${hours}</span><span class="label">Horas</span></div>
+  <div class="bloque"><span class="num">${minutes}</span><span class="label">Min</span></div>
+  <div class="bloque"><span class="num">${seconds}</span><span class="label">Seg</span></div>
+`;
 }, 1000);
 
 // 📬 Confirmación de asistencia con validación de duplicado y formato

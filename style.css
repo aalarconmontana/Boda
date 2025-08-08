@@ -57,7 +57,7 @@ body {
 }
 
 header h1 {
-  font-family: "Fleur De Leah", cursive;
+  font-family: 'Parisienne', cursive;
   font-weight: 300;
   font-style: normal;
   font-size: 5rem; /* Tamaño para pantallas grandes */
@@ -75,6 +75,14 @@ header h2 {
   font-family: 'Great Vibes', cursive;
   font-size: 2rem;
   color: #7f8c8d;
+}
+
+.seccion h3 {
+  font-family: 'Parisienne', cursive;
+  font-size: 42px;
+  color: #ffffff;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
 /* Laterales florales */
@@ -134,7 +142,7 @@ header h2 {
 .imagen-pequena {
   width: 100%;
   max-width: 250px; /* Tamaño máximo en pantallas grandes */
-  border: 3px solid #7cb1d4;
+  border: 3px solid #85a9f8;
   border-radius: 15px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   display: block;
@@ -156,10 +164,33 @@ header h2 {
   }
 }
 
+/*contador*/
+
 #countdown {
-  font-size: 1.5rem;
-  margin-top: 1rem;
-  color: #e74c3c;
+  display: flex;
+  justify-content: center;
+  gap: 40px; /* Espacio entre bloques */
+  margin-top: 10px;
+}
+
+.bloque {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.num {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ffffff;
+  font-family: 'Lora', serif;
+}
+
+.label {
+  font-size: 1.2rem;       /* Tamaño más grande */
+  color: #ffffff;          /* Letras blancas */
+  margin-top: 5px;
+  font-family: 'Lora', serif;
 }
 
 /* 📸 Carrusel */
