@@ -390,20 +390,6 @@ form button:hover {
   gap: 10px; /* separación más sutil entre hora e ícono */
 }
 
-.ubicacion {
-  font-size: 1.2rem;
-  font-weight: 500;
-  color: #333;
-}
-
-.icono-ubicacion {
-  width: 24px;
-  height: 24px;
-  object-fit: contain;
-  vertical-align: middle;
-}
-
-
 .vestidos-con-icono {
   display: inline-flex;
   align-items: center;
@@ -420,6 +406,27 @@ form button:hover {
 .icono-vestidos {
   width: 32px;
   height: 32px;
+  object-fit: contain;
+  vertical-align: middle;
+}
+
+
+.ubicacion-con-icono {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; /* separación más sutil entre hora e ícono */
+}
+
+.ubicacion {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.icono-ubicacion {
+  width: 24px;
+  height: 24px;
   object-fit: contain;
   vertical-align: middle;
 }
