@@ -82,7 +82,7 @@ header h2 {
 
 .seccion h3 {
   font-family: 'Parisienne', cursive;
-  font-size: 42px;
+  font-size: 39px;
   white-space: nowrap;
   color: #ffffff;
   margin-bottom: 20px;
@@ -310,6 +310,8 @@ form input {
 }
 
 form button {
+  font-family: "Exo 2", sans-serif;
+  font-size: 1.0em;
   padding: 0.5rem 1rem;
   background-color: #3498db;
   color: white;
@@ -335,7 +337,7 @@ form button:hover {
   margin: 2rem auto;
   max-width: 700px;
   padding: 1rem;
-  background: #cad8e7;
+  background: #c4d8ec;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
