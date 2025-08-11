@@ -19,6 +19,9 @@ document.getElementById("abrirCarta").addEventListener("click", () => {
     // Mostrar los laterales florales
     document.querySelector(".decoracion-izquierda").classList.add("mostrar");
     document.querySelector(".decoracion-derecha").classList.add("mostrar");
+
+    // ✅ Recalcular carrusel al mostrar contenido
+    mostrarImagen(index);
   }, 500);
 });
 
@@ -143,3 +146,37 @@ function enviarFormulario(nombre, email, fechaTexto, horaTexto) {
     alert("Hubo un error al enviar tu confirmación. Intenta nuevamente.");
   });
 }
+
+// 📸 Carrusel de fotos
+const carruselSlide = document.querySelector(".carrusel-slide");
+const carruselImages = document.querySelectorAll(".carrusel-slide img");
+const prevBtn = document.querySelector(".prev");
+const nextBtn = document.querySelector(".next");
+
+let index = 0;
+
+function mostrarImagen(i) {
+  const width = carruselImages[0].offsetWidth; // ✅ corregido
+  carruselSlide.style.transform = `translateX(-${i * width}px)`;
+}
+
+nextBtn.addEventListener("click", () => {
+  index = (index + 1) % carruselImages.length;
+  mostrarImagen(index);
+});
+
+prevBtn.addEventListener("click", () => {
+  index = (index - 1 + carruselImages.length) % carruselImages.length;
+  mostrarImagen(index);
+});
+
+// Autoavance cada 5 segundos
+setInterval(() => {
+  index = (index + 1) % carruselImages.length;
+  mostrarImagen(index);
+}, 5000);
+
+// ✅ Recalcular al cargar la página
+window.addEventListener("load", () => {
+  mostrarImagen(index);
+});

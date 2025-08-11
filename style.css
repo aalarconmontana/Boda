@@ -1,7 +1,7 @@
 /* 🎨 Estilo general */
 body {
   font-family: "Exo 2", sans-serif;
-  background: linear-gradient(to bottom, #ffffff, #d0e6f7);
+  background: linear-gradient(to bottom, #f8fafc, #a8cde9);
   margin: 0;
   padding: 0;
   text-align: center;
@@ -24,7 +24,7 @@ body {
   background: white;
   padding: 2rem;
   border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   animation: zoomIn 1s ease;
 }
 
@@ -61,14 +61,16 @@ header h1 {
   font-family: 'Parisienne', cursive;
   font-weight: 300;
   font-style: normal;
-  font-size: 5rem; /* Tamaño para pantallas grandes */
+  font-size: 5rem;
+  /* Tamaño para pantallas grandes */
   color: #000000;
 }
 
 /* Tamaño responsivo para móviles */
 @media (max-width: 768px) {
   header h1 {
-    font-size: 3rem; /* Se adapta mejor a celular o tablet */
+    font-size: 3rem;
+    /* Se adapta mejor a celular o tablet */
   }
 }
 
@@ -84,7 +86,7 @@ header h2 {
   white-space: nowrap;
   color: #ffffff;
   margin-bottom: 20px;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 /* Laterales florales */
@@ -100,8 +102,10 @@ header h2 {
   display: none;
   opacity: 0;
   transition: opacity 1s ease;
-  z-index: 20; /* 🔼 Aumentado para que estén por encima */
-  pointer-events: none; /* Evita que bloqueen clics si son decorativas */
+  z-index: 20;
+  /* 🔼 Aumentado para que estén por encima */
+  pointer-events: none;
+  /* Evita que bloqueen clics si son decorativas */
 }
 
 .decoracion-izquierda {
@@ -124,6 +128,7 @@ header h2 {
 
 /* Responsive para móviles */
 @media (max-width: 768px) {
+
   .decoracion-izquierda,
   .decoracion-derecha {
     width: 80px;
@@ -143,8 +148,8 @@ header h2 {
 
 .mensaje-destacado p {
   color: #000000;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.2em;
+  font-family: "Exo 2", sans-serif;
+  font-size: 0.9em;
   line-height: 1.6;
 }
 
@@ -162,7 +167,8 @@ header h2 {
 
 .imagen-pequena {
   width: 100%;
-  max-width: 250px; /* Tamaño máximo en pantallas grandes */
+  max-width: 250px;
+  /* Tamaño máximo en pantallas grandes */
   border: 3px solid #a2b2d4;
   border-radius: 15px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
@@ -179,8 +185,10 @@ header h2 {
 /* 📱 Estilo especial para móviles */
 @media (max-width: 768px) {
   .imagen-pequena {
-    max-width: 80%; /* Más ancho en pantallas pequeñas */
-    border-radius: 10px; /* Bordes más suaves */
+    max-width: 80%;
+    /* Más ancho en pantallas pequeñas */
+    border-radius: 10px;
+    /* Bordes más suaves */
     margin: 1.5rem auto;
   }
 }
@@ -190,7 +198,8 @@ header h2 {
 #countdown {
   display: flex;
   justify-content: center;
-  gap: 40px; /* Espacio entre bloques */
+  gap: 40px;
+  /* Espacio entre bloques */
   margin-top: 10px;
 }
 
@@ -208,44 +217,76 @@ header h2 {
 }
 
 .label {
-  font-size: 1.2rem;       /* Tamaño más grande */
-  color: #ffffff;          /* Letras blancas */
+  font-size: 1.2rem;
+  /* Tamaño más grande */
+  color: #ffffff;
+  /* Letras blancas */
   margin-top: 5px;
   font-family: 'Lora', serif;
 }
 
 /* 📸 Carrusel */
-#carrusel {
-  margin: 2rem auto;
+.carrusel-container {
+  position: relative;
   overflow: hidden;
   width: 90%;
   max-width: 600px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  margin: 2rem auto;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
-.slider {
+.carrusel-slide {
   display: flex;
-  width: 300%;
-  animation: slide 12s infinite;
+  transition: transform 0.5s ease-in-out;
 }
 
-.slider img {
+.carrusel-slide img {
   width: 100%;
+  flex-shrink: 0;
   height: 300px;
   object-fit: cover;
+  border-radius: 12px;
+}
+
+.carrusel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.7);
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.carrusel-btn:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
 }
 
 /* Mapa */
 .mapa-container {
   width: 100%;
   max-width: 100%;
-  padding: 0 20px; /* Espacio lateral en móviles */
+  padding: 0 20px;
+  /* Espacio lateral en móviles */
   box-sizing: border-box;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: none; /* Sin sombra */
-  background: none; /* Sin fondo */
+  box-shadow: none;
+  /* Sin sombra */
+  background: none;
+  /* Sin fondo */
   margin: 20px auto;
 }
 
@@ -294,9 +335,9 @@ form button:hover {
   margin: 2rem auto;
   max-width: 700px;
   padding: 1rem;
-  background: #a2b2d4;
+  background: #cad8e7;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .seccion img {
@@ -327,7 +368,8 @@ form button:hover {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px; /* separación más sutil entre hora e ícono */
+  gap: 10px;
+  /* separación más sutil entre hora e ícono */
 }
 
 .calendario-icono {
@@ -347,7 +389,8 @@ form button:hover {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px; /* separación más sutil entre hora e ícono */
+  gap: 10px;
+  /* separación más sutil entre hora e ícono */
 }
 
 .hora {
@@ -367,7 +410,8 @@ form button:hover {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px; /* separación más sutil entre hora e ícono */
+  gap: 10px;
+  /* separación más sutil entre hora e ícono */
 }
 
 .sobre {
@@ -387,14 +431,16 @@ form button:hover {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px; /* separación más sutil entre hora e ícono */
+  gap: 10px;
+  /* separación más sutil entre hora e ícono */
 }
 
 .vestidos-con-icono {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px; /* separación más sutil entre hora e ícono */
+  gap: 4px;
+  /* separación más sutil entre hora e ícono */
 }
 
 .vestidos {
@@ -415,7 +461,8 @@ form button:hover {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px; /* separación más sutil entre hora e ícono */
+  gap: 10px;
+  /* separación más sutil entre hora e ícono */
 }
 
 .ubicacion {
@@ -435,7 +482,8 @@ form button:hover {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px; /* separación más sutil entre hora e ícono */
+  gap: 10px;
+  /* separación más sutil entre hora e ícono */
 }
 
 .confirmar-asistencia {
@@ -454,6 +502,7 @@ form button:hover {
 .mensaje-biblico {
   color: #000000;
   position: relative;
+  font-size: 0.9em;
   padding: 1rem 0;
 }
 
@@ -474,18 +523,43 @@ form button:hover {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes zoomIn {
-  from { transform: scale(0.8); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 @keyframes slide {
-  0% { transform: translateX(0%); }
-  33% { transform: translateX(-100%); }
-  66% { transform: translateX(-200%); }
-  100% { transform: translateX(0%); }
+  0% {
+    transform: translateX(0%);
+  }
+
+  33% {
+    transform: translateX(-100%);
+  }
+
+  66% {
+    transform: translateX(-200%);
+  }
+
+  100% {
+    transform: translateX(0%);
+  }
 }

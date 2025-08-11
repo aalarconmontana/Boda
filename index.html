@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Camilo & Angie </title>
   <link rel="stylesheet" href="style.css" />
-  
-   <!-- Fuente para títulos -->
+
+  <!-- Fuente para títulos -->
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lora&display=swap" rel="stylesheet" />
-  
+
   <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
 
-  <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
 
 </head>
+
 <body>
 
   <!-- 💌 Flores laterales -->
   <div class="decoracion-izquierda"></div>
-  <div class="decoracion-derecha"></div>  
+  <div class="decoracion-derecha"></div>
 
   <!-- 💌 Carta animada -->
   <div id="sobre">
@@ -49,7 +52,7 @@
           Te invitamos a ser parte de este momento único,<br>
           donde nuestras vidas se convertirán en una sola.
         </p>
-      </div>  
+      </div>
     </header>
 
     <section class="seccion animada">
@@ -59,7 +62,9 @@
 
     <section class="seccion animada">
       <div class="calendario-icono-con-icono">
-        <span class="calendario-icono"><h3>El gran día</h3></span>
+        <span class="calendario-icono">
+          <h3>El gran día</h3>
+        </span>
         <img src="img/calendario-icono.png" alt="Icono" class="icono-calendario-icono">
       </div>
       <img src="img/Calendario2.png" alt="Calendario de noviembre" class="imagen-calendario" />
@@ -67,34 +72,41 @@
 
     <!-- 📸 Carrusel de fotos -->
     <section id="carrusel" class="seccion animada">
-      <div class="slider">
-        <img src="img/foto1.jpg" alt="Foto 1" />
-        <img src="img/foto2.jpg" alt="Foto 2" />
-        <img src="img/foto3.jpg" alt="Foto 3" />
+      <div class="carrusel-container">
+        <div class="carrusel-slide">
+          <img src="img/foto1.jpg" alt="Foto 1" />
+          <img src="img/foto2.jpg" alt="Foto 2" />
+          <img src="img/foto3.jpg" alt="Foto 3" />
+        </div>
+        <button class="carrusel-btn prev">❮</button>
+        <button class="carrusel-btn next">❯</button>
       </div>
     </section>
     <div class="mensaje-biblico">
-        Nos elegimos en amor, y Dios nos bendice en unidad.<br>
-        “Y sobre todas estas cosas, vestíos de amor, que es el vínculo perfecto.”<br>
-        — Colosenses 3:14
+      Nos elegimos en amor, y Dios nos bendice en unidad.<br>
+      “Y sobre todas estas cosas, vestíos de amor, que es el vínculo perfecto.”<br>
+      — Colosenses 3:14
     </div>
     <!-- 🗺️ Ubicación -->
     <section class="seccion animada">
       <div class="hora-con-icono">
-        <span class="hora"><h3>Hora</h3></span>
+        <span class="hora">
+          <h3>Hora</h3>
+        </span>
         <img src="img/reloj.png" alt="Icono" class="icono-hora">
       </div>
       <p>3:00 PM</p>
       <div class="ubicacion-con-icono">
-        <span class="ubicacion"><h3>Ubicación</h3></span>
+        <span class="ubicacion">
+          <h3>Ubicación</h3>
+        </span>
         <img src="img/marcador.png" alt="Icono" class="icono-ubicacion">
       </div>
       <p>Hacienda versalles, Funza-La Punta, Cundinamarca</p>
       <div class="mapa-container">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3975.8611295196383!2d-74.2226603259627!3d4.79387564084473!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f7f8a904351d3%3A0xfd843578865aeead!2sHacienda%20Versalles%20by%20Carlos%20y%20Paola!5e0!3m2!1ses-419!2sco!4v1754622477200!5m2!1ses-419!2sco" width="400" height="300" style="border:0;" 
-          allowfullscreen="" 
-          loading="lazy" 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3975.8611295196383!2d-74.2226603259627!3d4.79387564084473!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f7f8a904351d3%3A0xfd843578865aeead!2sHacienda%20Versalles%20by%20Carlos%20y%20Paola!5e0!3m2!1ses-419!2sco!4v1754622477200!5m2!1ses-419!2sco"
+          width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
           referrerpolicy="no-referrer-when-downgrade">
           width="100%"
           height="300"
@@ -104,36 +116,37 @@
           referrerpolicy="no-referrer-when-downgrade">
         </iframe>
       </div>
-      <a href="https://maps.app.goo.gl/APNvTJjN1hXUCUSt7"
-         target="_blank" class="mapa-boton">Ver en Google Maps</a>
+      <a href="https://maps.app.goo.gl/APNvTJjN1hXUCUSt7" target="_blank" class="mapa-boton">Ver en Google Maps</a>
     </section>
 
     <!-- 👗 Código de vestimenta -->
     <section class="seccion animada">
-      <div class="vestidos-con-icono">
-        <span class="vestidos"><h3>Código de Vestimenta</h3></span>
-        <img src="img/vestidos.png" alt="Icono" class="icono-vestidos">
-      </div>
+      <img src="img/vestidos.png" alt="Icono" class="icono-vestidos">
+      <span class="vestidos">
+        <h3>Código de Vestimenta</h3>
+      </span>
       <p><strong>Mujeres: </strong>Vestido Formal (Largo)</p>
       <p><strong>Hombres: </strong>Traje Formal</p>
-      <p><strong>Reservamos los colores blanco y gama de azul claro.<br> 
-      Reservamos el color azul noche para el novio.</strong>Traje Formal</p>
-    </section>  
+      <p>Reservamos los colores blanco y gama de azul claro.<br>
+        Reservamos el color azul noche para el novio.</p>
+    </section>
 
     <!-- Lluvia de Sobres -->
     <section class="seccion animada">
-      <span class="sobre"><h3>Lluvia de Sobres</h3></span>
+      <span class="sobre">
+        <h3>Lluvia de Sobres</h3>
+      </span>
       <img src="img/sobre.png" alt="Icono" class="icono-sobre">
-    </section> 
+    </section>
 
     <!-- 📬 Confirmación -->
     <section class="seccion animada">
-      <div class="confirmar-asistencia-con-icono">
-        <span class="confirmar-asistencia"><h3>Confirma tu asistencia</h3></span>
-        <img src="img/confirmar-asistencia.png" alt="Icono" class="icono-confirmar-asistencia">
-      </div>
+      <img src="img/confirmar-asistencia.png" alt="Icono" class="icono-confirmar-asistencia">
+      <span class="confirmar-asistencia">
+        <h3>Confirma tu asistencia</h3>
+      </span>
       <p>Por favor, confirma tu asistencia<br>
-      antes del 28 de septiembre del 2025</p><br>
+        antes del 28 de septiembre del 2025</p><br>
       <form id="form-rsvp">
         <input type="text" id="nombre" placeholder="Tu nombre" required />
         <input type="email" id="email" placeholder="Tu correo" required />
@@ -147,4 +160,5 @@
 
   <script src="script.js"></script>
 </body>
+
 </html>
